@@ -30,7 +30,8 @@ def gradcheck_naive(f, x):
         # to test cost functions with built in randomness later.
 
         ### YOUR CODE HERE:
-        raise NotImplementedError
+
+        # raise NotImplementedError
         ### END YOUR CODE
 
         # Compare gradients

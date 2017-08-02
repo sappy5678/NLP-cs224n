@@ -26,6 +26,8 @@ def softmax(x):
     Return:
     x -- You are allowed to modify x in-place
     """
+
+    # by 公式  http://i.imgur.com/KwB9HrK.png
     orig_shape = x.shape
 
     if len(x.shape) > 1:
