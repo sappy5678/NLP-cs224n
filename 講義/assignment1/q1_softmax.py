@@ -31,12 +31,28 @@ def softmax(x):
     if len(x.shape) > 1:
         # Matrix
         ### YOUR CODE HERE
-        raise NotImplementedError
+        # axis 是因為要對每一行分別做計算，像是把 matrix 轉成很多個 vector 一樣\
+        # 取max 是 因為要讓數字不要太大，而且相減後做除法的質也不會改變
+        max = np.max(x,axis=1)
+        # 轉成可以對每一行正確相減的格式
+        max = max.reshape((x.shape[0], 1))
+        x = x - max
+        x_exp = np.exp(x)
+        # axis 是因為要對每一行分別做計算，像是把 matrix 轉成很多個 vector 一樣
+        x_sum = np.sum(x_exp,axis=1)
+        x = x_exp / x_sum
+        # raise NotImplementedError
         ### END YOUR CODE
     else:
         # Vector
         ### YOUR CODE HERE
-        raise NotImplementedError
+        # 取max 是 因為要讓數字不要太大，而且相減後做除法的質也不會改變
+        max = np.max(x)
+        x = x - max
+        x_exp = np.exp(x)
+        x_sum = np.sum(x_exp)
+        x = x_exp / x_sum
+        # raise NotImplementedError
         ### END YOUR CODE
 
     assert x.shape == orig_shape
@@ -78,7 +94,8 @@ def test_softmax():
     """
     print "Running your tests..."
     ### YOUR CODE HERE
-    raise NotImplementedError
+    pass
+    # raise NotImplementedError
     ### END YOUR CODE
 
 
