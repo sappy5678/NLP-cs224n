@@ -28,6 +28,10 @@ def softmax(x):
     """
 
     # by 公式  http://i.imgur.com/KwB9HrK.png
+    # 參考資料
+    #  softmax
+    # https://www.zhihu.com/question/23765351
+    # https://zh.wikipedia.org/wiki/Softmax%E5%87%BD%E6%95%B0
     orig_shape = x.shape
 
     if len(x.shape) > 1:
